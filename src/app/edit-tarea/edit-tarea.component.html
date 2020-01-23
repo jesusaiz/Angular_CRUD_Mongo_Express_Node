@@ -1,0 +1,58 @@
+
+      <main>
+        <mat-card>
+          <form (ngSubmit)="onSubmit()" #tareaForm="ngForm">
+
+            <!--titulo row-->            
+            <mat-form-field>
+              <input matInput 
+                    required 
+                     placeholder="Titulo"  
+                     [(ngModel)]="tarea.titulo" 
+                     name="titulo">
+            </mat-form-field>
+
+             <!--fecha row-->  
+            <mat-form-field>
+                <input matInput
+                       required 
+                        placeholder="Fecha" 
+                        [matDatepicker]="beginDate" 
+                        [(ngModel)]="tarea.fecha"   
+                        name="fecha">
+                <mat-datepicker-toggle matSuffix [for]="beginDate"></mat-datepicker-toggle>
+                <mat-datepicker #beginDate></mat-datepicker>
+               
+            </mat-form-field>
+
+             <!--Estado row-->  
+            <mat-form-field>
+                <mat-label>Estado</mat-label>
+                <mat-select 
+                    placeholder="Estado"
+                    [(ngModel)]="tarea.estado"
+                    name="estado" >
+                    <mat-option *ngFor="let estado of estados" [value]="estado">{{estado}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!--Description row-->
+            <mat-form-field class="example-full-width">
+              <mat-label>Describe la Tarea</mat-label>
+              <textarea matInput
+                         placeholder="Escribe Tarea"
+                         [(ngModel)]="tarea.description"
+                         name="description">
+              </textarea>
+            </mat-form-field>
+
+
+             <!--button row-->  
+            <button mat-button mat-flat-button color="warn" style="display:block; width:100%;" [disabled]="!tareaForm.valid">
+              Enviar
+            </button>
+          </form>
+        </mat-card>
+      
+       
+      </main>

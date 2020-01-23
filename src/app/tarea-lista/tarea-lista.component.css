@@ -1,0 +1,64 @@
+table{
+  margin: auto;
+  width: 75%;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  }
+.buttonCenter{
+  left: 25%;
+  width: 50%;
+  margin-top: 2rem;
+  }
+
+  tr.tarea-detail-row {
+    height: 0;
+  }
+  
+  tr.tarea-element-row:not(.tarea-expanded-row):hover {
+    background: #fce8e7;
+  }
+  
+  tr.tarea-element-row:not(.tarea-expanded-row):active {
+    background: #e05b57;
+  }
+  
+  tr.tarea-element-row td {
+    border-bottom-width: 0;
+  }
+  
+  .tarea-element-detail {
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .tarea-element-diagram {
+    min-width: 80px;
+    border: 2px solid black;
+    padding: 8px;
+    font-weight: lighter;
+    margin: 8px 0;
+    height: 104px;
+    background-color:#fce8e7 ;
+  }
+  
+  .tarea-element-titulo {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: normal;
+  }
+  
+  .tarea-element-description {
+    padding: 16px;
+  }
+  
+  .tarea-element-description-attribution {
+    opacity: 0.5;
+  }
+
+  tr.is-finished {
+    background: #f8d483;
+  }
+
+  .mat-sort-header-container {
+    align-items: center;
+  }
