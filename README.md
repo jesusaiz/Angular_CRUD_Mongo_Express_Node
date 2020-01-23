@@ -2,31 +2,44 @@
 
 A simple CRUD application of Little TASK.
 
-The application is built using Angular 8 with Angular Material and TypeScript on the frontend, NodeJS and ExpressJS and MOngoDB on the backend.
+The application is built using Angular 8 with Angular Material and TypeScript on the frontend, NodeJS and ExpressJS and MongoDB on the backend.
 
 ![](showcase/showcas_tareas.gif)
 
-## Development server
+Environment Setup
+You need to have Docker to be able to build and run the application.
 
-Run `ng build` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
+How to build and run
+Build the backend application image
 
-## Code scaffolding
+docker build -t=cs-backend -f Dockerfile.backend .
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Build the frontend application image
 
-## Build
+docker build -t=cs-frontend -f Dockerfile.frontend .
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Create a docker network
 
-## Running unit tests
+docker network create cs-net
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Start the database
 
-## Running end-to-end tests
+docker run -p 5432:5432 \
+  -e POSTGRES_USER=company-structure \
+  -e POSTGRES_PASSWORD=company-structure \
+  -e POSTGRES_DB=company-structure \
+  --name cs-db \
+  --net=cs-net \
+  postgres:11.5
+Start the backend
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+docker run --name=cs_backend \
+     --net=cs-net \
+     -p 8080:8080 \
+     cs-backend:latest
+Start the frontend
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# Angular_CRUD_Mongo_Express_Node
+docker run --name=cs_frontend \
+     -p 4200:4200 \
+     cs-frontend:latest
+The application is accessible on http://localhost:4200.
