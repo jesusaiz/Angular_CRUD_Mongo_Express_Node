@@ -1,10 +1,14 @@
 # TareasApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+A simple CRUD application of Little TASK.
+
+The application is built using Angular 8 with Angular Material and TypeScript on the frontend, NodeJS and ExpressJS and MOngoDB on the backend.
+
+![](showcas_tareas.gif)
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng build` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
