@@ -4,7 +4,7 @@ A simple CRUD application of Little TASK.
 
 The application is built using Angular 8 with Angular Material and TypeScript on the frontend, NodeJS and ExpressJS and MOngoDB on the backend.
 
-![](showcas_tareas.gif)
+![](showcase/showcas_tareas.gif)
 
 ## Development server
 
