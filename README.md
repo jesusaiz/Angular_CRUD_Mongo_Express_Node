@@ -1,28 +1,16 @@
 # TareasApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+A simple CRUD application of Little TASK.
 
-## Development server
+The application is built using Angular 8 with Angular Material and TypeScript on the frontend, NodeJS and ExpressJS and MongoDB on the backend.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![](showcase/showcas_tareas.gif)
 
-## Code scaffolding
+# Environment Setup
+You need to have node, express and Mongoose to be able to build and run the application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# How to build and run
+Build the package with ng build command
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# Angular_CRUD_Mongo_Express_Node
+The application is accessible on http://localhost:3000/tareas.
